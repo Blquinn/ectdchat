@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package protobufs;
+
+service ChatNode {
+  rpc SendChatMessage (ChatMessage) returns (ChatMessageAck) {}
+}
+
+message ChatMessage {
+  string id = 1;
+  string channel = 2;
+  string message = 3;
+}
+
+message ChatMessageAck {
+  string id = 1;
+}
